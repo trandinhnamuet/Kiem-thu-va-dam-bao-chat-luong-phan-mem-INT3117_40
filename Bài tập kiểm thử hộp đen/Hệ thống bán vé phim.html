@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>He thong ban ve phim</title>
+</head>
+
+<body>
+    <p>F12 -> MTS("filmTag", age, "studentCard")</p>
+    <p>filmTag[ G / PG13 / R ]</p>
+    <p>age : [0, 200]</p>
+    <p>filmTag[ yes / no ]</p>
+    <script>
+        console.log("student card [yes/no]")
+        function MTS(filmTag, age, studentCard) { //Movie Ticketing System
+            filmTag = filmTag.toLowerCase();
+            studentCard = studentCard.toLowerCase();
+
+            if (age < 0 || age > 200 || typeof (age) != "number") {
+                console.log("Tuổi không hợp lệ");
+                return;
+            }
+
+            if (filmTag == "pg13") {
+                if (age < 13) {
+                    console.log("Chưa đủ tuổi xem phim")
+                    return;
+                } else { //da du tuoi xem phim
+                    if (studentCard == "yes") {
+                        console.log("Giá vé phim: 35.000VND")
+                    } else if (studentCard == "no") {
+                        console.log("Giá vé phim: 70.000VND")
+                    } else {
+                        console.log("Thẻ sinh viên không hợp lệ")
+                    }
+                }
+            } else if (filmTag == "r") {
+                if (age < 17) {
+                    console.log("Chưa đủ tuổi xem phim")
+                    return;
+                } else { //da du tuoi xem phim
+                    if (studentCard == "yes") {
+                        console.log("Giá vé phim: 35.000VND")
+                    } else if (studentCard == "no") {
+                        console.log("Giá vé phim: 70.000VND")
+                    } else {
+                        console.log("Thẻ sinh viên không hợp lệ")
+                    }
+                }
+            } else if (filmTag == "g") {
+                if (studentCard == "yes") {
+                    console.log("Giá vé phim: 35.000VND")
+                } else if (studentCard == "no") {
+                    console.log("Giá vé phim: 70.000VND")
+                } else {
+                    console.log("Thẻ sinh viên không hợp lệ")
+                }
+            } else {
+                console.log("Phân loại phim không hợp lệ")
+            }
+        }
+        /* Phân tích giá trị biên mạnh
+            MTS("G", 20, "yes")
+            MTS("PG13", 20, "yes")
+            MTS("R", 20, "yes")
+            MTS("X", 20, "yes")
+            MTS("PG13", 0, "no")
+            MTS("PG13", 200, "no")
+            MTS("PG13", 1, "no")
+            MTS("PG13", 199, "no")
+            MTS("PG13", 20, "no")
+            MTS("PG13", -17, "no")
+            MTS("PG13", 217, "no")
+            MTS("R", 20, "no")
+            MTS("R", 20, "broken")
+        */
+    </script>
+</body>
+
+</html>

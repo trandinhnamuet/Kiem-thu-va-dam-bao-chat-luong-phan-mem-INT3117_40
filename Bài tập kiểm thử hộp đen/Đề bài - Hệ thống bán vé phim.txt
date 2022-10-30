@@ -1,0 +1,9 @@
+Đề bài: Hệ thống bán vé phim
+- Phân loại phim: + G   : mọi lứa tuổi
+		  + PG13: dưới 13 tuổi không được xem
+		  + R   : dưới 17 tuổi không được xem
+- Tuổi: [0, 200]
+- Thẻ sinh viên: {có, không}
+
+Người xem phải đủ tuối với nhãn phân loại phim mới được xem. Có thẻ sinh viên
+thì giá vé 35.000 VND. Không thẻ sinh viên thì giá vé 70.000 VND.

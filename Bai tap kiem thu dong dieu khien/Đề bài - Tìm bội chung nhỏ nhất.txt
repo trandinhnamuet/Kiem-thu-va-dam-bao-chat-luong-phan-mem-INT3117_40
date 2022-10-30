@@ -1,0 +1,3 @@
+Đề bài - Tìm bội chung nhỏ nhất của 2 số nguyên
+
+VD: 3,5 -> BCNN là 15
